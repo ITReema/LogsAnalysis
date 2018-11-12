@@ -31,22 +31,24 @@ To explore the data<br>
 Views were created to answer the third query in the project.<br>
 
 
-```CREATE VIEW errors AS 
+```
+CREATE VIEW errors AS 
 SELECT date(time), COUNT(*) as error_requests 
 FROM log 
 WHERE status = '404 NOT FOUND' 
 GROUP BY date(time);
  ```
-<br>
 
-```CREATE VIEW total AS 
+
+```
+CREATE VIEW total AS 
 SELECT date(time), COUNT(*) AS total 
 FROM log 
 GROUP BY date(time);
 ```
-<br>
 
-```CREATE VIEW rate AS 
+```
+CREATE VIEW rate AS 
 SELECT TO_CHAR(total.date, 'FMMonth DD, YYYY') as date, (100.0 * errors.count / total.count) AS percentage 
 from total, errors 
 WHERE total.date = errors.date;
