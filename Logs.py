@@ -27,7 +27,8 @@ def print_query1(results):
     for i in range(len(results)):
         title = results[i][0]
         views = results[i][1]
-        print("\t" + "\"%s\" -- %d "% (title, views) + "views")
+        print("\t" + "\"%s\" - %d "% (title, views) + "views")
+    print("\n")
 
 print(Question1)
 print_query1(result1)
@@ -36,7 +37,8 @@ def print_query2(results):
     for i in range(len(results)):
         name = results[i][0]
         views = results[i][1]
-        print("\t" + "%s -- %d "% (name, views) + "views")
+        print("\t" + "%s - %d "% (name, views) + "views")
+    print("\n")
 
 print(Question2)
 print_query2(result2)
@@ -46,6 +48,7 @@ def print_query3(results):
         date = results[i][0]
         errors = results[i][1]
         print("\t" + "%s - %.1f%%"% (date,errors) + " errors")
+    print("\n")
 
 print(Question3)
 print_query3(result3)
