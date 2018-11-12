@@ -18,31 +18,33 @@ cd /vagrant
 “newsdata.sql” [Download](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
 To load the database: <br>
-```psql -d news -f newsdata.sql```
+```psql -d news -f newsdata.sql``` <br>
 To run the database:<br>
-```psql -d news```
+```psql -d news``` <br>
 To explore the data<br>
-	-use **\dt** lists the tables that are available in the database<br>
-	-use **\d table_name** shows the database schema for that particular table<br>
-    -use **\dv** shows the views in database<br>
+	```\dt ``` lists the tables that are available in the database<br>
+	```\d table_name ``` shows the database schema for that particular table<br>
+   ```\dv ``` shows the views in database<br>
 
 
-#### Create Views
+#### Create Views <br>
 Views were created to answer the third query in the project.<br>
 
+#####VIEW errors <br>
 ```CREATE VIEW errors AS 
 SELECT date(time), COUNT(*) as error_requests 
 FROM log 
 WHERE status = '404 NOT FOUND' 
 GROUP BY date(time);
  ```
-<br>
+
+#####VIEW total <br>
 ```CREATE VIEW total AS 
 SELECT date(time), COUNT(*) AS total 
 FROM log 
 GROUP BY date(time);
 ```
-<br>
+#####VIEW rate <br>
 ```CREATE VIEW rate AS 
 SELECT TO_CHAR(total.date, 'FMMonth DD, YYYY') as date, (100.0 * errors.count / total.count) AS percentage 
 from total, errors 
