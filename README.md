@@ -17,14 +17,14 @@ cd /vagrant
 ### Download and Load the Data <br>
 “newsdata.sql” [Download](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
-To load the database: <br>
+**To load the database:** <br>
 ```psql -d news -f newsdata.sql``` <br>
-To run the database:<br>
+**To run the database:**<br>
 ```psql -d news``` <br>
-To explore the data<br>
-	```\dt ``` lists the tables that are available in the database<br>
-	```\d table_name ``` shows the database schema for that particular table<br>
-   ```\dv ``` shows the views in database<br>
+**To explore the data**<br>
+	```\dt ```	lists the tables that are available in the database<br>
+	```\d table_name ```	shows the database schema for that particular table<br>
+   ```\dv ```	shows the views in database<br>
 
 
 #### Create Views <br>
