@@ -65,3 +65,4 @@ def print_query3(results):
 
 print(Question3)
 print_query3(result3)
+
